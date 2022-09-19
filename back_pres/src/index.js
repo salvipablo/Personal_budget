@@ -1,13 +1,11 @@
 import app from './app.js';
 import { sequelize } from './database/database.js';
-import './models/Users.js';
-import './models/Budget.js';
 
 const PORT = 3000;
 
 async function main() {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });  
     console.log('Connection has been established successfully.');
 
     app.listen(PORT);

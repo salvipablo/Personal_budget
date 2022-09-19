@@ -12,7 +12,7 @@ export const BudgetSchema = sequelize.define('budget', {
     type: DataTypes.STRING
   },
   amount: {
-    type: DataTypes.FLOAT(6, 2)
+    type: DataTypes.DECIMAL(6, 2)
   },
   date: {
     type: DataTypes.DATE
