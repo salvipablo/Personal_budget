@@ -1,3 +1,4 @@
+import { BudgetSchema } from '../models/Budget.js';
 import { UserSchema } from '../models/Users.js';
 
 export const getUsers = async (req, res) => {
@@ -20,7 +21,7 @@ export const getUser = async (req, res) => {
 
     res.json(user);
   } catch (error) {
-    return res.status(500).json({ message: message.error })
+    return res.status(500).json({ message: error.message })
   }
 };
 
@@ -53,7 +54,7 @@ export const updateUser = async (req, res) => {
 
     res.json(foundUser);
   } catch (error) {
-    return res.status(500).json({ message: message.error })
+    return res.status(500).json({ message: error.message })
   }
 };
 
@@ -69,6 +70,20 @@ export const deleteUser = async (req, res) => {
   
     res.sendStatus(204);
   } catch (error) {
-    return res.status(500).json({ message: message.error })
+    return res.status(500).json({ message: error.message })
   }
 };
+
+export const getUsersMovements = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const movementsByUser = await BudgetSchema.findAll({
+      where: { iduser: id }
+    });
+
+    res.json(movementsByUser);
+  } catch (error) {
+    return res.status(500).json({ message: error.message })
+  }
+}
