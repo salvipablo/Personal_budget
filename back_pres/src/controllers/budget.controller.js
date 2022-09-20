@@ -47,7 +47,6 @@ export const readMovement = async (req, res) => {
   }
 }
 
-// Actualizar un movimiento.
 export const updateMovement = async (req, res) => {
   const { id } = req.params;
   const { concept, amount, date, type } = req.body;
@@ -83,3 +82,31 @@ export const deleteMovement = async (req, res) => {
     return res.status(500).json({ message: error.message })
   }
 }
+
+export const totalExpenses = async (req, res) => {
+  try {
+    const movements = await BudgetSchema.findAll();
+    
+    const sumall = 
+      movements.map(item => item.type == "Egreso" ? parseFloat(item.amount) : 0)
+      .reduce((prev, curr) => prev + curr, 0);
+
+    res.json({ total: sumall });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export const totalIncome = async (req, res) => {
+  try {
+    const movements = await BudgetSchema.findAll();
+    
+    const sumall = 
+    movements.map(item => item.type == "Ingreso" ? parseFloat(item.amount) : 0)
+    .reduce((prev, curr) => prev + curr, 0);
+
+    res.json({ total: sumall });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};

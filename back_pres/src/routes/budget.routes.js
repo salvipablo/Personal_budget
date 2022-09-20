@@ -5,6 +5,8 @@ import {
   deleteMovement,
   readMovement,
   readMovements,
+  totalExpenses,
+  totalIncome,
   updateMovement
 } from '../controllers/budget.controller.js';
 
@@ -15,5 +17,8 @@ router.get('/budget', readMovements);
 router.get('/budget/:id', readMovement);
 router.put('/budget/:id', updateMovement);
 router.delete('/budget/:id', deleteMovement);
+
+router.get('/expenses', totalExpenses);
+router.get('/income', totalIncome);
 
 export default router;

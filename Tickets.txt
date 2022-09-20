@@ -5,3 +5,4 @@ T#0004 - Schemas of tables were made.
 T#0005 - route creation.
 T#0006 - Users.
 T#0007 - Movements.
+T#0008 - Expenses and incomes.
