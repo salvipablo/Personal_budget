@@ -1,11 +1,13 @@
 import React from 'react';
 
-import FrmLogin from '../../components/Login';
+import './index.css'
+
+import FrmLogin from '../../components/FrmLogin';
 
 function Login() {
   return (
     <section>
-      <h2>Ingresa tus datos para empezar a operar.</h2>
+      <h2 className='formTitle'>Ingresa tus datos para empezar a operar.</h2>
       <FrmLogin />
     </section>
   );

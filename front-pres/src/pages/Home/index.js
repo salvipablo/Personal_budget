@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <h1>Presupuesto Personal.</h1>
+    <header>
+      <h1>Bienvenido a su sistema de presupuesto personal.</h1>
+      <Link to='/login'>Ingresar</Link>
+      <Link to='/register'>Crear cuenta</Link>
+    </header>
   );
 }
 
