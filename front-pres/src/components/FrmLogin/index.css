@@ -11,3 +11,7 @@ button {
   width: 200px;
   padding: 1em;
 }
+
+form {
+  margin-top: 1.5em;
+}

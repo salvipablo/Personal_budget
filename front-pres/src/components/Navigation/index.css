@@ -1,0 +1,15 @@
+.linkNavHeader {
+  margin-right: 1em ;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: brown;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cntNavLinks {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  width: 50%;
+}

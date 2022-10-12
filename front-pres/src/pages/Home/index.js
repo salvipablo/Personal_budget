@@ -1,13 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import './index.css';
+
+import logo from '../../Assets/logo.jpg';
+import Navbar from '../../components/Navigation/index.js'
 
 function Home() {
   return (
-    <header>
-      <h1>Bienvenido a su sistema de presupuesto personal.</h1>
-      <Link to='/login'>Ingresar</Link>
-      <Link to='/register'>Crear cuenta</Link>
+    <header className='cntHeader'>
+      <div className='cntHeaderImg'>
+        <img className='imgHeader' src={logo} />
+        <h1 className='mainTitle'>Bienvenido a su sistema de presupuesto personal.</h1>
+      </div>
+      <Navbar />
     </header>
+
   );
 }
 

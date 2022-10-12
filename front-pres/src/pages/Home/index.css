@@ -1,0 +1,15 @@
+.cntHeader {
+  display: flex;
+}
+
+.cntHeaderImg {
+  width: 50%;
+}
+
+.imgHeader {
+  width: 250px;
+}
+
+.mainTitle {
+  color: #444444;
+}
