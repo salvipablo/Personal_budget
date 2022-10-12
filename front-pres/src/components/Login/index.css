@@ -1,0 +1,13 @@
+input {
+  border: 0;
+  border-bottom: 1px solid #aaa9a9;
+  margin-bottom: 1.5em;
+  width: 300px;
+  display: block;
+  font-size: 16px;
+}
+
+button {
+  width: 200px;
+  padding: 1em;
+}
