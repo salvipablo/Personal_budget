@@ -8,7 +8,7 @@ const PORT = 3000;
 
 async function main() {
   try {
-    await sequelize.sync({ force: false });  
+    await sequelize.sync({ force: false });
     console.log('Connection has been established successfully.');
 
     app.listen(PORT);

@@ -16,7 +16,7 @@ export const createMovement = async (req, res) => {
       iduser: iduser
     });
 
-    res.json(newMovement);
+    res.status(201).json({ message: 'Movement created successfully' });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -61,7 +61,7 @@ export const updateMovement = async (req, res) => {
 
     await foundMovement.save();
 
-    res.json(foundMovement);
+    res.status(201).json({ message: 'Movement successfully updated' });
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
@@ -84,28 +84,34 @@ export const deleteMovement = async (req, res) => {
 }
 
 export const totalExpenses = async (req, res) => {
-  try {
-    const movements = await BudgetSchema.findAll();
-    
-    const sumall = 
-      movements.map(item => item.type == "Egreso" ? parseFloat(item.amount) : 0)
-      .reduce((prev, curr) => prev + curr, 0);
+  const { id } = req.params;
 
-    res.json({ total: sumall });
+  try {
+    const movements = await BudgetSchema.findAll({
+      where: { iduser: id, type: "Egreso" }
+    });
+
+    const sumall = movements.map(item => parseFloat(item.amount))
+                                      .reduce((prev, curr) => prev + curr, 0);
+
+    res.status(200).json({ total: sumall });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
 export const totalIncome = async (req, res) => {
-  try {
-    const movements = await BudgetSchema.findAll();
-    
-    const sumall = 
-    movements.map(item => item.type == "Ingreso" ? parseFloat(item.amount) : 0)
-    .reduce((prev, curr) => prev + curr, 0);
+  const { id } = req.params;
 
-    res.json({ total: sumall });
+  try {
+    const movements = await BudgetSchema.findAll({
+      where: { iduser: id, type: "Ingreso" }
+    });
+
+    const sumall = movements.map(item => parseFloat(item.amount))
+                                      .reduce((prev, curr) => prev + curr, 0);
+
+    res.status(200).json({ total: sumall });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

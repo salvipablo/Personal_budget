@@ -18,7 +18,7 @@ router.get('/budget/:id', readMovement);
 router.put('/budget/:id', updateMovement);
 router.delete('/budget/:id', deleteMovement);
 
-router.get('/expenses', totalExpenses);
-router.get('/income', totalIncome);
+router.get('/expenses/:id', totalExpenses);
+router.get('/income/:id', totalIncome);
 
 export default router;
