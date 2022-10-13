@@ -116,3 +116,41 @@ export const totalIncome = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export const getUsersMovements = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const movementsByUser = await BudgetSchema.findAll({
+      where: { iduser: id }
+    });
+
+    res.status(200).json(movementsByUser);
+  } catch (error) {
+    return res.status(500).json({ message: error.message })
+  }
+}
+
+export const currentBalance = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const movements = await BudgetSchema.findAll({
+      where: { iduser: id }
+    });
+
+    const incomes = movements
+      .map(item => item.type == 'Ingreso' ? parseFloat(item.amount) : 0)
+      .reduce((prev, curr) => prev + curr, 0);
+
+      const expenses = movements
+      .map(item => item.type == 'Egreso' ? parseFloat(item.amount) : 0)
+      .reduce((prev, curr) => prev + curr, 0);
+
+    let total = incomes - expenses;
+
+    res.status(200).json({ result: total });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+}

@@ -73,17 +73,3 @@ export const deleteUser = async (req, res) => {
     return res.status(500).json({ message: error.message })
   }
 };
-
-export const getUsersMovements = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const movementsByUser = await BudgetSchema.findAll({
-      where: { iduser: id }
-    });
-
-    res.json(movementsByUser);
-  } catch (error) {
-    return res.status(500).json({ message: error.message })
-  }
-}

@@ -7,7 +7,9 @@ import {
   readMovements,
   totalExpenses,
   totalIncome,
-  updateMovement
+  updateMovement,
+  getUsersMovements,
+  currentBalance
 } from '../controllers/budget.controller.js';
 
 const router = Router();
@@ -17,8 +19,10 @@ router.get('/budget', readMovements);
 router.get('/budget/:id', readMovement);
 router.put('/budget/:id', updateMovement);
 router.delete('/budget/:id', deleteMovement);
+router.get('/budget/:id/movements', getUsersMovements);
 
-router.get('/expenses/:id', totalExpenses);
+router.get('/currentBalance/:id', currentBalance);
 router.get('/income/:id', totalIncome);
+router.get('/expenses/:id', totalExpenses);
 
 export default router;
