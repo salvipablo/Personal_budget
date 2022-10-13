@@ -1,0 +1,15 @@
+.cntContents {
+  display: flex;
+}
+
+.cntMain {
+  width: 80%;
+  height: 450px;
+  background-color: antiquewhite;
+}
+
+.cntAside {
+  width: 20%;
+  height: 450px;
+  background-color: aliceblue;
+}

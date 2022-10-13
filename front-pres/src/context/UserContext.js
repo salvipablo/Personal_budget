@@ -11,7 +11,6 @@ export function UserContextProvider(props) {
   }, [userName]);
 
   function updateUser(user) {
-    console.log('user en UserContext: ' + user);
     setUserName(user);
   } 
 

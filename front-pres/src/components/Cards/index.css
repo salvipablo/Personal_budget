@@ -1,0 +1,16 @@
+.card {
+  border: 1px solid #333333;
+  border-radius: 15px;
+  width: 250px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardNumber {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
