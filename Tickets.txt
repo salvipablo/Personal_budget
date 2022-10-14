@@ -17,3 +17,4 @@ T#0016 - Backend controllers.
 T#0017 - Current Balance.
 T#0018 - Cards and Info.
 T#0019 - main content dynamic data.
+T#0020 - Graphic interface.

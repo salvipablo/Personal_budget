@@ -16,8 +16,6 @@ function Movements() {
     // eslint-disable-next-line
   }, []);
 
-  console.log(movements);
-
   return (
     <section>
       <div className='cntTableMov'>

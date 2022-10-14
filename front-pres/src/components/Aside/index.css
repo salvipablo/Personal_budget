@@ -1,0 +1,29 @@
+.cntAsideBtns {
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.btnAside {
+  width: 90%;
+  height: 80px;
+
+  background: transparent;
+
+  background-color: #353586;
+  color: #ffe4c4;
+
+  border: 1px solid #333333;
+  border-radius: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
