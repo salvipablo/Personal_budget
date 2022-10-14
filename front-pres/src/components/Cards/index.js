@@ -8,7 +8,7 @@ import CardExpenses from '../CardExpenses/index.js';
 
 function Cards() {
   return (
-    <section>
+    <section className='sctCards'>
       <CardCurrentBalance />
       <CardIncome />
       <CardExpenses />

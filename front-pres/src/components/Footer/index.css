@@ -1,7 +1,20 @@
 footer {
-  height: 40px;
-  background-color: rgb(180, 130, 228);
+  height: 150px;
+  background-color: #333333;
+  color: #f0f8ff;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.textFooter {
+  position: absolute;
+  z-index: 1;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #9292e7;
+}
+
+.imgFooter {
+  height: 50%;
 }

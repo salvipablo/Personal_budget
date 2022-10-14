@@ -8,6 +8,7 @@ function CardCurrentBalance() {
     fetch(apiUrl)
     .then(res => res.json())
     .then(response => setCurrentBalance(response))
+    // eslint-disable-next-line
   }, []);
 
   return (

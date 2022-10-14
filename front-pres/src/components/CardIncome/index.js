@@ -8,6 +8,7 @@ function CardIncome() {
     fetch(apiUrl)
     .then(res => res.json())
     .then(response => setIncomes(response))
+    // eslint-disable-next-line
   }, []);
 
   return (

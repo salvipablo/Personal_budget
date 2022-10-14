@@ -1,0 +1,44 @@
+.cntTableMov, .cntMovMov {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 100px 1fr 250px 150px 200px 90px 90px;
+  grid-column-gap: 10px;
+}
+
+.titleMov {
+  background-color: #d3d2d2;
+  color: #363535;
+  text-align: center;
+  height: 70px;
+  padding-top: 16px;
+  font-size: 12px;
+  border-radius: 5px 5px 0 0;
+}
+
+.cntMovMov {
+  margin-top: 0;
+}
+
+.rowMov {
+  background-color: #ffffff;
+  color: #2e2b2b;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.btnDelete, .btnUpdate {
+  background: transparent;
+  background-color: #ffffff;
+  border: none;
+  width: 90px;
+}
+
+.imgDelete, .imgUpdate {
+  width: 30px;
+}
+
+.imgUpdate {
+  border-radius: 10px;
+}
