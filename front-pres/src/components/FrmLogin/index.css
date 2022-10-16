@@ -1,4 +1,4 @@
-input {
+.inputLogin {
   border: 0;
   border-bottom: 1px solid #aaa9a9;
   margin-bottom: 1.5em;
@@ -7,11 +7,11 @@ input {
   font-size: 16px;
 }
 
-button {
+.btnFrmLogin {
   width: 200px;
   padding: 1em;
 }
 
-form {
+.formLogin {
   margin-top: 1.5em;
 }

@@ -3,15 +3,6 @@
 }
 
 .cntMain {
-  width: 80%;
-  height: 450px;
-}
-
-.cntAside {
-  width: 20%;
-  height: 450px;
-  background-color: rgb(35, 53, 68);
-  margin-left: 10px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(25, 32, 32);
+  grid-column: 1 / 4;
+  margin-top: 1em;
 }

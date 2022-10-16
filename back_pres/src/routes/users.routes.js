@@ -10,9 +10,9 @@ import {
 
 const router = Router();
 
+router.post('/users', createUser);
 router.get('/users', getUsers);
 router.get('/users/:username', getUser);
-router.post('/users', createUser);
 router.put('/users/:id', updateUser);
 router.delete('/users/:id', deleteUser);
 

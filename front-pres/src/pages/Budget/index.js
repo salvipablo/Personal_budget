@@ -22,15 +22,13 @@ function Budget() {
   return (
     <>
       <BudgetHeader />
-      <div className='cntContents'>
-        <main className='cntMain'>
-          <Cards />
-          <Movements />
-        </main>
-        <aside className='cntAside'>
-          <BudgetAside />
-        </aside>
-      </div>
+      <main className='cntMain'>
+        <Cards />
+        <Movements />
+      </main>
+      <aside className='cntAside'>
+        <BudgetAside />
+      </aside>
       <BudgetFooter />
     </>
   );

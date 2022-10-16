@@ -1,5 +1,12 @@
 .cntAsideBtns {
-  padding-top: 20px;
+  margin: 20px;
+  padding-top: 10px;
+
+  background-color: #adacac;
+
+  height: 450px;
+
+  border-radius: 15px;
 
   display: flex;
   flex-direction: column;

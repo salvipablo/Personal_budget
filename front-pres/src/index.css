@@ -18,5 +18,9 @@ code {
 }
 
 .App {
-  padding: 10px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 80px auto 90px;
+  padding: 0 10px;
 }

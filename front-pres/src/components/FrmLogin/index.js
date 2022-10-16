@@ -25,12 +25,12 @@ function FrmLogin() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="nameUser" placeholder="Nombre de usuario" 
+    <form className='formLogin' onSubmit={handleSubmit}>
+      <input className='inputLogin' type="text" name="nameUser" placeholder="Nombre de usuario" 
                               onChange={(e) => setNameUser(e.target.value)} />
-      <input type="password" name="passUser" placeholder="Contraseña"
+      <input className='inputLogin' type="password" name="passUser" placeholder="Contraseña"
                               onChange={(e) => setPassword(e.target.value)} />
-      <button>Ingresar</button>
+      <button className='btnFrmLogin'>Ingresar</button>
     </form>
   );
 }

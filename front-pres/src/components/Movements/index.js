@@ -7,7 +7,11 @@ import imgUpdate from '../../Assets/images/rotate.png';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
-  const apiUrl = `http://192.168.0.132:3000/budget/1/movements`;
+  // Trabajo.
+  // const apiUrl = `http://192.168.0.132:3000/budget/1/movements`;
+
+  // Casa.
+  const apiUrl = `http://localhost:3001/budget/1/movements`;
 
   useEffect(() => {
     fetch(apiUrl)

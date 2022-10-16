@@ -33,6 +33,7 @@
   background-color: #ffffff;
   border: none;
   width: 90px;
+  cursor: pointer;
 }
 
 .imgDelete, .imgUpdate {

@@ -4,11 +4,9 @@ export const createMovement = async (req, res) => {
   const { concept, amount, date, type, iduser } = req.body;
 
   let dateMov = new Date(date);
-  console.log(date);
-  console.log(dateMov);
 
   try {
-    const newMovement = await BudgetSchema.create({
+    await BudgetSchema.create({
       concept: concept,
       amount: amount,
       date: dateMov,
@@ -25,7 +23,7 @@ export const createMovement = async (req, res) => {
 export const readMovements = async (req, res) => {
   try {
     const movements = await BudgetSchema.findAll();
-    res.json(movements);
+    res.status(200).json(movements);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -41,7 +39,7 @@ export const readMovement = async (req, res) => {
       return res.status(404)
                         .json({ message: 'searched movement does not exist' })
 
-    res.json(movement);
+    res.status(200).json(movement);
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
@@ -77,7 +75,7 @@ export const deleteMovement = async (req, res) => {
       }
     });
   
-    res.sendStatus(204);
+    res.status(200).json({ message: 'Move successfully removed' });
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }

@@ -4,7 +4,7 @@ import { UserSchema } from '../models/Users.js';
 export const getUsers = async (req, res) => {
   try {
     const users = await UserSchema.findAll();
-    res.json(users);
+    res.status(200).json(users);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -19,7 +19,7 @@ export const getUser = async (req, res) => {
     if (!user) 
       return res.status(404).json({ message: 'Searched user does not exist' })
 
-    res.json(user);
+    res.status(200).json(user);
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
@@ -52,7 +52,7 @@ export const updateUser = async (req, res) => {
 
     await foundUser.save();
 
-    res.json(foundUser);
+    res.status(201).json(foundUser);
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
@@ -68,7 +68,7 @@ export const deleteUser = async (req, res) => {
       }
     });
   
-    res.sendStatus(204);
+    res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
     return res.status(500).json({ message: error.message })
   }
