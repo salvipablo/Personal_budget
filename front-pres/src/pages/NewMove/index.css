@@ -1,9 +1,12 @@
+.cntFrmNewMove {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .titleFrmNewMove {
   text-align: center;
-  margin-bottom: 1.2em;
-}
-
-.cntFrmNewMove {
-  grid-column: 2 / 4;
-  grid-row: 1 / 5;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-family: 'Roboto';
 }

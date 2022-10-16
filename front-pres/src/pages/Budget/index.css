@@ -2,7 +2,14 @@
   display: flex;
 }
 
+.cntMainAside {
+  display: flex;
+  padding: 1em 10px 0 10px;
+}
+
 .cntMain {
-  grid-column: 1 / 4;
-  margin-top: 1em;
+  width: 80%;
+}
+.cntAside {
+  width: 20%;
 }

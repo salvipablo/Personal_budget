@@ -1,3 +1,15 @@
+.cntFrmLogin {
+  margin: 1em auto;
+  width: 40%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .formTitle {
   color: #444444 ;
+  font-family: 'Roboto';
+  text-transform: uppercase;
 }

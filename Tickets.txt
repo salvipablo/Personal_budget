@@ -20,3 +20,4 @@ T#0019 - main content dynamic data.
 T#0020 - Graphic interface.
 T#0021 - Graphic interface and refact backend.
 T#0022 - Added new move.
+T#0023 - Graphic interface.

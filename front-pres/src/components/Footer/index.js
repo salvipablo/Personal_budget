@@ -5,7 +5,7 @@ import './index.css';
 
 function BudgetFooter() {
   return (
-    <footer>
+    <footer className='footerBudget'>
       <p className='textFooter'>Creado por Pablo J. Salvi.</p>
     </footer>
   );

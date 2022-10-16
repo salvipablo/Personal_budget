@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -36,20 +37,24 @@ function FrmNewMove() {
   }
 
   return (
+    <>
     <form className='frmNewMove' onSubmit={handleSubmit}>
       <label className='lblFrmNewMove'>Concepto:</label>
       <input className='inputFrmNewMove' type='text' 
           placeholder='Ingrese concepto' 
           onChange={(e) => setConcept(e.target.value)}/>
+      <br />
       <label className='lblFrmNewMove'>Monto de movimiento</label>
       <input className='inputFrmNewMove' type='number' 
           placeholder='Ingrese monto'
           onChange={(e) => setAmount(e.target.value)}
       />
+      <br />
       <label className='lblFrmNewMove'>Fecha</label>
       <input className='inputFrmNewMove' type='date' 
           onChange={(e) => setDate(e.target.value)}
       />
+      <br />
       <label className='lblFrmNewMove'>Tipo de movimiento</label>
       <select className='inputFrmNewMove' name="select" 
           onChange={(e) => setType(e.target.value)}>
@@ -57,8 +62,11 @@ function FrmNewMove() {
         <option value="Ingreso">Ingreso</option>
         <option value="Egreso">Egreso</option>
       </select>
+      <br />
       <input className='btnSubmitNewMove' type='submit' value='Enviar'></input>
     </form>
+    <Link className='linkFrmNewMove' to='/budget'>Volver a la pantalla principal</Link>
+    </>
   );
 }
 

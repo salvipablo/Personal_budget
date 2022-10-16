@@ -1,7 +1,7 @@
 .cntHeader {
-  grid-column: 1/5;
   height: 220px;
   display: flex;
+  padding: 5px 10px 0 10px;
 }
 
 .cntHeaderImg {
@@ -10,8 +10,11 @@
 
 .imgHeader {
   width: 250px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px rgba(25, 32, 32);
 }
 
 .mainTitle {
   color: #444444;
+  font-family: Roboto;
 }
