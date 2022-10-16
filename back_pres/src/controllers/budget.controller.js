@@ -3,6 +3,8 @@ import { BudgetSchema } from '../models/Budget.js'
 export const createMovement = async (req, res) => {
   const { concept, amount, date, type, iduser } = req.body;
 
+  console.log(concept, amount, date, type, iduser);
+
   let dateMov = new Date(date);
 
   try {

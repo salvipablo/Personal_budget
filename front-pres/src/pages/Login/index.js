@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.css'
 
-import FrmLogin from '../../components/FrmLogin';
+import FrmLogin from '../../components/FrmLogin/index.js';
 
 function Login() {
   return (

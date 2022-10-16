@@ -1,0 +1,21 @@
+.frmNewMove {
+  background-color: aqua;
+  height: 450px;
+}
+.lblFrmNewMove {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+}
+
+.inputFrmNewMove {
+  display: inline-block;
+  width: 250px;
+  padding: 1em;
+}
+
+.btnSubmitNewMove {
+  width: 350px;
+  height: 50px;
+  margin-left: 50px;
+}

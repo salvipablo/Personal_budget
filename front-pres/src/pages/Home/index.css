@@ -1,4 +1,6 @@
 .cntHeader {
+  grid-column: 1/5;
+  height: 220px;
   display: flex;
 }
 

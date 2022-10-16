@@ -34,3 +34,12 @@
 
   cursor: pointer;
 }
+
+.linkAside {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+}
