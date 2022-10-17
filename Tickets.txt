@@ -22,3 +22,4 @@ T#0021 - Graphic interface and refact backend.
 T#0022 - Added new move.
 T#0023 - Graphic interface.
 T#0024 - Update Movement.
+T#0025 - Info.

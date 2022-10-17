@@ -1,14 +1,15 @@
 # Backend
-Proyecto realizado con Javascript y NodeJs, que implemeta JSONWebToken.
+Proyecto realizado con Javascript, NodeJs y se conecta a una base de datos PostgreSQL.
 
-## Rutas
+### Ejecucion
+```
+npm run dev
+```
 
-```
-http://localhost:3000/users/3/movements
-```
-A esta ruta hay que pasarle, el id del usuario y devuelve, los movimientos de este.
+# Frontend
+Proyecto realizado con ReactJS.
 
+### Ejecucion
 ```
-http://localhost:3000/budget
+npm start
 ```
-La fucionalidad que tiene esta ruta, es devolver todos los movimientos de todos los usuarios. Estaria pensada mas para un administrador del sistema.
