@@ -13,12 +13,32 @@ function Movements() {
   // Casa.
   const apiUrl = `http://localhost:3001/budget/1/movements`;
 
-  useEffect(() => {
+  function updateMovements() {
     fetch(apiUrl)
     .then(res => res.json())
     .then(response => setMovements(response))
+  }
+  useEffect(() => {
+    updateMovements();
     // eslint-disable-next-line
-  }, []);
+  }, [movements]);
+
+  const handleDelete = (e) => {
+    let id = e.target.alt;
+    let urlApiDelete = `http://localhost:3001/budget/${id}`;
+
+    fetch(urlApiDelete, {method: "DELETE"})
+    .then(response => response.json()) 
+    .then(json => console.log(json))
+    .catch(err => console.log(err));
+
+    updateMovements();
+  };
+
+  const handleUpdate = (e) => {
+    let id = e.target.alt;
+    console.log(id);
+  }
 
   return (
     <section>
@@ -33,7 +53,7 @@ function Movements() {
       </div>
 
       {
-        movements.map( ({ date, concept, amount, type }) =>
+        movements.map( ({ id, date, concept, amount, type }) =>
           <>
             <div className='cntMovMov'>
               <p className='rowMov'>{date.substring(0, 10)}</p>
@@ -41,11 +61,13 @@ function Movements() {
               <p className='rowMov'>{amount}</p>
               <p className='rowMov'>{type}</p>
               <p className='rowMov'>-</p>
-              <button className='rowMov btnDelete'>
-                <img className='imgDelete' src={imgDelete} />
+              <button className='rowMov btnDelete' 
+                                          onClick={(e) => handleDelete(e)}>
+                <img alt={id} className='imgDelete' src={imgDelete} />
               </button>
-              <button className='rowMov btnUpdate'>
-                <img className='imgUpdate' src={imgUpdate} />
+              <button className='rowMov btnUpdate' 
+                                          onClick={(e) => handleUpdate(e)}>
+                <img alt={id} className='imgUpdate' src={imgUpdate} />
               </button>
             </div>
             <hr />

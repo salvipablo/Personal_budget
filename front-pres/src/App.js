@@ -4,6 +4,7 @@ import {
   Routes
 } from "react-router-dom";
 
+import FrmUpdateMove from './components/FrmUpdateMove/index.js';
 import NewMove from './pages/NewMove/index.js';
 import Budget from './pages/Budget/index.js';
 import Home from './pages/Home/index.js';
