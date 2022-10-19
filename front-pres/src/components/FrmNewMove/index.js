@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 function FrmNewMove() {
-  // useState para tomar los datos.
   const [ concept, setConcept ] = useState('');
   const [ amount, setAmount ] = useState(0);
   const [ date, setDate ] = useState('');
@@ -25,7 +24,7 @@ function FrmNewMove() {
 
       console.log(JSON.stringify(newMove));
 
-      fetch('http://localhost:3001/budget/', {
+      fetch('http://localhost:3010/budget/', {
         method: "POST",
         body: JSON.stringify(newMove),
         headers: {"Content-type": "application/json"}

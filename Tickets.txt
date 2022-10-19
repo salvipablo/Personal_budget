@@ -24,3 +24,4 @@ T#0023 - Graphic interface.
 T#0024 - Update Movement.
 T#0025 - Info.
 T#0026 - Environment Variables.
+T#0027 - Api only localhost.

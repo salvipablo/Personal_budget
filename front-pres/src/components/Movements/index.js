@@ -7,11 +7,7 @@ import imgUpdate from '../../Assets/images/rotate.png';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
-  // Trabajo.
-  // const apiUrl = `http://192.168.0.132:3000/budget/1/movements`;
-
-  // Casa.
-  const apiUrl = `http://localhost:3001/budget/1/movements`;
+  const apiUrl = `http://localhost:3010/budget/1/movements`;
 
   function updateMovements() {
     fetch(apiUrl)
@@ -25,7 +21,7 @@ function Movements() {
 
   const handleDelete = (e) => {
     let id = e.target.alt;
-    let urlApiDelete = `http://localhost:3001/budget/${id}`;
+    let urlApiDelete = `http://localhost:3010/budget/${id}`;
 
     fetch(urlApiDelete, {method: "DELETE"})
     .then(response => response.json()) 
