@@ -1,6 +1,14 @@
 import Sequelize from 'sequelize';
 
-export const sequelize = new Sequelize('budgetdb', 'postgres', 'passwordPostgreSQL', {
-  host: 'localhost',
-  dialect: 'postgres'
+import { 
+  DB_DATABASE, 
+  DB_TYPE, 
+  DB_PASSWORD, 
+  DB_HOST, 
+  DB_DIALECT 
+} from '../config.js';
+
+export const sequelize = new Sequelize(DB_DATABASE, DB_TYPE, DB_PASSWORD, {
+  host: DB_HOST,
+  dialect: DB_DIALECT
 });

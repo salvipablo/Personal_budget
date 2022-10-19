@@ -5,7 +5,7 @@ import { sequelize } from './database/database.js';
 // import './models/Users.js';
 // import './models/Budget.js';
 
-const PORT = 3001;
+import { PORT } from './config.js';
 
 async function main() {
   try {
