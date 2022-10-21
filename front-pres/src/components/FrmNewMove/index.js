@@ -22,21 +22,17 @@ function FrmNewMove() {
         iduser: 1
       }
 
-      console.log(JSON.stringify(newMove));
-
-      fetch('http://localhost:3010/budget/', {
+      const response = await fetch('http://localhost:3010/budget/', {
         method: "POST",
         body: JSON.stringify(newMove),
         headers: {"Content-type": "application/json"}
       })
-      .then(response => response.json()) 
-      .then(json => console.log(json))
-      .catch(err => console.log(err));
+      const information = await response.json();
+      alert(information.message);
     }
   }
 
-  return (
-    <>
+  return <>
     <form className='frmNewMove' onSubmit={handleSubmit}>
       <label className='lblFrmNewMove'>Concepto:</label>
       <input className='inputFrmNewMove' type='text' 
@@ -44,7 +40,7 @@ function FrmNewMove() {
           onChange={(e) => setConcept(e.target.value)}/>
       <br />
       <label className='lblFrmNewMove'>Monto de movimiento</label>
-      <input className='inputFrmNewMove' type='number' 
+      <input className='inputFrmNewMove' type='number' step=".01"
           placeholder='Ingrese monto'
           onChange={(e) => setAmount(e.target.value)}
       />
@@ -65,8 +61,7 @@ function FrmNewMove() {
       <input className='btnSubmitNewMove' type='submit' value='Enviar'></input>
     </form>
     <Link className='linkFrmNewMove' to='/budget'>Volver a la pantalla principal</Link>
-    </>
-  );
+  </>
 }
 
 export default FrmNewMove;
