@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { Link } from 'react-router-dom';
 
 import './index.css'
 
 import imgDelete from '../../Assets/images/delete.png';
 import imgUpdate from '../../Assets/images/rotate.png';
-import { Link } from 'react-router-dom';
+
+import { UserContext } from '../../context/UserContext.js';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
+  const { loggedUserId } = useContext(UserContext);
 
-  const apiUrl = `http://localhost:3010/budget/1/movements`;
+  const apiUrl = `http://localhost:3010/budget/${loggedUserId}/movements`;
 
   useEffect(() => {
     updateMovements();

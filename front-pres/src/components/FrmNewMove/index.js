@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
 
+import { UserContext } from '../../context/UserContext.js';
+
 function FrmNewMove() {
+  const { loggedUserId } = useContext(UserContext);
   const [ concept, setConcept ] = useState('');
   const [ amount, setAmount ] = useState(0);
   const [ date, setDate ] = useState('');
@@ -19,7 +22,7 @@ function FrmNewMove() {
         amount: parseFloat(amount),
         date: date,
         type: type,
-        iduser: 1
+        iduser: loggedUserId
       }
 
       const response = await fetch('http://localhost:3010/budget/', {

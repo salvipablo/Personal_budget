@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+
+import { UserContext } from '../../context/UserContext.js';
 
 function CardCurrentBalance() {
   const [ currentBalance, setCurrentBalance ] = useState(0);
-  const apiUrl = `http://localhost:3010/currentBalance/1`;
+  const { loggedUserId } = useContext(UserContext);
+  const apiUrl = `http://localhost:3010/currentBalance/${loggedUserId}`;
 
   useEffect(() => {
     fetch(apiUrl)

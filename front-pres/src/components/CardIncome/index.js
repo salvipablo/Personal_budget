@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+
+import { UserContext } from '../../context/UserContext.js';
 
 function CardIncome() {
   const [ incomes, setIncomes ] = useState(0);
-  const apiUrl = `http://localhost:3010/income/1`;
+  const { loggedUserId } = useContext(UserContext);
+  const apiUrl = `http://localhost:3010/income/${loggedUserId}`;
 
   useEffect(() => {
     fetch(apiUrl)

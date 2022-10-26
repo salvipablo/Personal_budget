@@ -4,18 +4,16 @@ export const UserContext = createContext();
 
 export function UserContextProvider(props) {
   const [userName, setUserName] = useState('');
+  // eslint-disable-next-line
+  const [ loggedUserId, setLoggedUserId] = useState(0);
 
   useEffect(() => {
     let userSession = sessionStorage.getItem('userPres');
     setUserName(userSession);
-  }, [userName]);
-
-  function updateUser(user) {
-    setUserName(user);
-  } 
+  }, [userName, loggedUserId]);
 
   return (
-    <UserContext.Provider value={{userName, setUserName, updateUser}}>
+    <UserContext.Provider value={{userName, setUserName, loggedUserId, setLoggedUserId}}>
     {props.children}
     </UserContext.Provider>
   );

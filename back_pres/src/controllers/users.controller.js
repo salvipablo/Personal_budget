@@ -81,7 +81,7 @@ export const login = async (req, res) => {
 
     let user = await UserSchema.findOne({ where: { email: email } });
 
-    if (!user) return res.status(403).json({ error: "No existe este usuario" });
+    if (!user) return res.status(403).json({ message: "No existe este usuario" });
 
     if (password !== user.password) 
               return res.status(403).json({ message: "Contraseña incorrecta" });
