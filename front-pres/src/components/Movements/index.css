@@ -43,3 +43,9 @@
 .imgUpdate {
   border-radius: 10px;
 }
+
+.cntLinkUpdate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

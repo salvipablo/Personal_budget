@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import './index.css';
 
 function FrmUpdateMove(props) {
   const [ frmConcept, setFrmConcept ] = useState('');
@@ -6,12 +9,8 @@ function FrmUpdateMove(props) {
   const [ frmDate, setFrmDate ] = useState('');
   const [ frmType, setFrmType ] = useState('');
 
-  const { recIdtoUpdate, listMovements } = props;
-
-  const recToUpdate = listMovements.filter((item) => item.id === parseInt(recIdtoUpdate));
-
-  const { id, concept, amount, date, type } = recToUpdate[0];
-
+  const { id, concept, amount, date, type } = props;
+  
   let frmDateDef = date.substring(0, 10);
 
   let whatType;
@@ -46,7 +45,6 @@ function FrmUpdateMove(props) {
     alert(information.message);
   }
 
-  console.log('Renderizado');
   return <>
     <form className='frmUpdateMove' onSubmit={handleUpdate}>
       <label className='lblFrmNewMove'>Concepto:</label>
@@ -78,8 +76,8 @@ function FrmUpdateMove(props) {
       </select>
       <br />
       <input className='btnSubmitUpdateMove' type='submit' value='Enviar' />
-      <button onClick={()=>props.getData('volvi')} >Click Me</button>
     </form>
+    <Link className='linkFrmNewMove' to='/budget'>Volver a la pantalla principal</Link>
   </>
 }
 
