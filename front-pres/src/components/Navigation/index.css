@@ -1,5 +1,13 @@
+/* Screen size less than 1280 */
+
+.cntNavLinks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5em;
+  width: 90%;
+}
+
 .linkNavHeader {
-  margin-right: 1em ;
   text-transform: uppercase;
   text-decoration: none;
   color: brown;
@@ -8,9 +16,4 @@
   font-family: 'Roboto';
 }
 
-.cntNavLinks {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 50%;
-}
+/* Screen size less than 1280 */

@@ -1,4 +1,7 @@
+/* Screen size less than 1280 */
+
 .cntFrmRegister {
+  padding: 5px 10px 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,3 +14,5 @@
   text-transform: uppercase;
   font-family: 'Roboto';
 }
+
+/* Screen size less than 1280 */

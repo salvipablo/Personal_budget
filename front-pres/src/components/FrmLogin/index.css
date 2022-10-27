@@ -1,3 +1,5 @@
+/* Screen size less than 1280 */
+
 .inputLogin {
   border: 0;
   border-bottom: 1px solid #aaa9a9;
@@ -15,3 +17,5 @@
 .formLogin {
   margin-top: 1.5em;
 }
+
+/* Screen size less than 1280 */

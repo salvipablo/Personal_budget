@@ -1,8 +1,9 @@
-/* Screen size less than 1280 */
-
+asi se ve bien en pantalla grande, en dos columnas label e inputs
 .frmRegister {
   display: inline-block;
-  width: 95%;
+  width: 600px;
+  padding: 2em;
+  border-radius: 50px;
   margin-top: 1em;
 }
 
@@ -31,5 +32,3 @@
   font-size: 11px;
   font-weight: bold;
 }
-
-/* Screen size less than 1280 */

@@ -8,12 +8,12 @@ import Navbar from '../../components/Navigation/index.js'
 function Home() {
   return (
     <header className='cntHeader'>
-      <div className='cntHeaderImg'>
-        <img className='imgHeader' src={logo} alt='headerImg'/>
+      <div className='cardHeaderHome'>
         <h1 className='mainTitle'>
-                          Bienvenido a su sistema de presupuesto personal.</h1>
+              Control de presupuesto personal.</h1>
+        <img className='imgHeader' src={logo} alt='headerImg'/>
+        <Navbar />
       </div>
-      <Navbar />
     </header>
 
   );
