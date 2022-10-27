@@ -1,4 +1,3 @@
-import { BudgetSchema } from '../models/Budget.js';
 import { UserSchema } from '../models/Users.js';
 
 export const getUsers = async (req, res) => {
@@ -81,10 +80,10 @@ export const login = async (req, res) => {
 
     let user = await UserSchema.findOne({ where: { email: email } });
 
-    if (!user) return res.status(403).json({ message: "No existe este usuario" });
+    if (!user) return res.status(403).json({ message: "There is no user" });
 
     if (password !== user.password) 
-              return res.status(403).json({ message: "Contraseña incorrecta" });
+              return res.status(403).json({ message: "Incorrect password" });
 
     return res.status(200).json({ user });
   } catch (error) {
