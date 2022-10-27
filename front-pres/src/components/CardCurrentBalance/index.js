@@ -4,7 +4,7 @@ import { UserContext } from '../../context/UserContext.js';
 
 function CardCurrentBalance() {
   const [ currentBalance, setCurrentBalance ] = useState(0);
-  const { loggedUserId } = useContext(UserContext);
+  const { loggedUserId, updateComponents } = useContext(UserContext);
   const apiUrl = `http://localhost:3010/currentBalance/${loggedUserId}`;
 
   const updateCardBalance = async () => {
@@ -17,7 +17,7 @@ function CardCurrentBalance() {
   useEffect(() => {
     updateCardBalance();
     // eslint-disable-next-line
-  }, []);
+  }, [updateComponents]);
 
   return (
     <div className='card'>

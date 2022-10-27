@@ -4,7 +4,7 @@ import { UserContext } from '../../context/UserContext.js';
 
 function CardIncome() {
   const [ incomes, setIncomes ] = useState(0);
-  const { loggedUserId } = useContext(UserContext);
+  const { loggedUserId, updateComponents } = useContext(UserContext);
   const apiUrl = `http://localhost:3010/income/${loggedUserId}`;
 
   const updateCardIncomes = async () => {
@@ -16,7 +16,7 @@ function CardIncome() {
   useEffect(() => {
     updateCardIncomes();
     // eslint-disable-next-line
-  }, []);
+  }, [updateComponents]);
 
   return (
     <div className='card'>

@@ -10,7 +10,7 @@ import { UserContext } from '../../context/UserContext.js';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
-  const { loggedUserId } = useContext(UserContext);
+  const { loggedUserId, setUpdateComponents } = useContext(UserContext);
 
   const apiUrl = `http://localhost:3010/budget/${loggedUserId}/movements`;
 
@@ -29,6 +29,7 @@ function Movements() {
     let id = e.target.alt;
     await fetch(`http://localhost:3010/budget/${id}`, {method: "DELETE"})
     updateMovements();
+    setUpdateComponents(1);
   };
 
   return <>
