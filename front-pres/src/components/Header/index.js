@@ -19,7 +19,7 @@ function BudgetHeader() {
     <header className='headerBudget'>
       <div className='cntHeaderContent'>
         <div className='cntHeaderLeft'>
-          <img className='imgHeaderBudget' src={iconHeader} />
+          <img alt='imgHeader' className='imgHeaderBudget' src={iconHeader} />
           <h1 className='titleHeader'>Presupuesto Personal</h1>
         </div>
         <div className='cntHeaderRight'>

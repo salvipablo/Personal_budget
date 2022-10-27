@@ -7,17 +7,22 @@ function CardCurrentBalance() {
   const { loggedUserId } = useContext(UserContext);
   const apiUrl = `http://localhost:3010/currentBalance/${loggedUserId}`;
 
+  const updateCardBalance = async () => {
+    const response = await fetch(apiUrl);
+    const information = await response.json();
+    const { result } = information;
+    setCurrentBalance(result);
+  }
+
   useEffect(() => {
-    fetch(apiUrl)
-    .then(res => res.json())
-    .then(response => setCurrentBalance(response))
+    updateCardBalance();
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className='card'>
       <p>SALDO ACTUAL:</p>
-      <p className='cardNumber'>${currentBalance.result}</p>
+      <p className='cardNumber'>${currentBalance}</p>
     </div>
   );
 }

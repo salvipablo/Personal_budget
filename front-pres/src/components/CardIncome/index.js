@@ -7,17 +7,21 @@ function CardIncome() {
   const { loggedUserId } = useContext(UserContext);
   const apiUrl = `http://localhost:3010/income/${loggedUserId}`;
 
+  const updateCardIncomes = async () => {
+    const response = await fetch(apiUrl);
+    const information = await response.json();
+    const { total } = information;
+    setIncomes(total);
+  }
   useEffect(() => {
-    fetch(apiUrl)
-    .then(res => res.json())
-    .then(response => setIncomes(response))
+    updateCardIncomes();
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className='card'>
       <p>Total Ingresado:</p>
-      <p className='cardNumber'>${incomes.total}</p>
+      <p className='cardNumber'>${incomes}</p>
     </div>
   );
 }

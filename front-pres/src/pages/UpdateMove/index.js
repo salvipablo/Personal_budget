@@ -6,7 +6,7 @@ import './index.css';
 import FrmUpdateMove from '../../components/FrmUpdateMove';
 
 function UpdateMove() {
-  const {state} = useLocation();
+  const { state } = useLocation();
   const { id, concept, amount, date, type } = state.movement[0];
   
   return (
