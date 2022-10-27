@@ -27,16 +27,20 @@ export const getUser = async (req, res) => {
 export const createUser = async (req, res) => {
   const { username, email, password } = req.body;
 
-  try {
-    const newUser = await UserSchema.create({
-      username,
-      email,
-      password
-    });
+  if (username === '' || email === '' || password === '')
+    res.status(400).json({ message: 'It has empty fields' });
+  else {
+    try {
+      const newUser = await UserSchema.create({
+        username,
+        email,
+        password
+      });
 
-    res.status(201).json(newUser);
-  } catch (error) {
-    return res.status(500).json({ message: error.message });
+      res.status(201).json(newUser);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
   }
 };
 

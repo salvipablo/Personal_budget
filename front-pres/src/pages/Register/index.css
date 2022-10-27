@@ -1,0 +1,13 @@
+.cntFrmRegister {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleRegister {
+  text-align: center;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+}

@@ -1,0 +1,34 @@
+.frmRegister {
+  display: inline-block;
+  width: 600px;
+  padding: 2em;
+  border: 1px solid #325549;
+  border-radius: 50px;
+  margin-top: 1em;
+}
+
+.lblFrmRegister {
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+}
+
+.inputRegister {
+  display: inline-block;
+  width: 270px;
+  padding: 1em;
+}
+
+.btnSubmitRegister {
+  width: 98%;
+  height: 50px;
+}
+
+.linkRegister {
+  color: black;
+  text-decoration: none;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+}

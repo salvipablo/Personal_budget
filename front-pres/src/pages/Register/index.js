@@ -1,8 +1,15 @@
 import React from 'react';
 
+import FrmRegister from '../../components/Register/index.js';
+
+import './index.css';
+
 function Register() {
   return (
-    <div>Register</div>
+    <section className='cntFrmRegister'>
+      <h2 className='titleRegister'>Crear Cuenta.</h2>
+      <FrmRegister />
+    </section>
   );
 }
 
