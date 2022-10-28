@@ -1,8 +1,10 @@
+/* Screen size less than 1280 */
+
 .cntTableMov, .cntMovMov {
   margin-top: 1em;
   display: grid;
-  grid-template-columns: 100px 1fr 250px 150px 200px 90px 90px;
-  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 30px 30px;
+  grid-column-gap: 5px;
 }
 
 .titleMov {
@@ -13,6 +15,10 @@
   padding-top: 16px;
   font-size: 12px;
   border-radius: 5px 5px 0 0;
+}
+
+.thType, .tdType {
+  display: none;
 }
 
 .cntMovMov {
@@ -28,16 +34,16 @@
   font-size: 12px;
 }
 
-.btnDelete, .btnUpdate {
+.btnDelete {
   background: transparent;
   background-color: #ffffff;
   border: none;
-  width: 90px;
+  width: 15px;
   cursor: pointer;
 }
 
 .imgDelete, .imgUpdate {
-  width: 30px;
+  width: 15px;
 }
 
 .imgUpdate {
@@ -48,4 +54,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Screen size less than 1280 */
+
+@media (min-width: 1280px) {
+  .cntTableMov, .cntMovMov {
+    grid-template-columns: 1fr 6fr 1fr 1fr 1fr 1fr;
+  }
+
+  .thType, .tdType {
+    display: block;
+  }
+  
+  .btnDelete, .imgDelete, .imgUpdate {
+    width: 30px;
+  }
 }

@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
 
+import { UserContext } from '../../context/UserContext.js';
+
 function FrmUpdateMove(props) {
+  const { API_URL } = useContext(UserContext);
   const [ frmConcept, setFrmConcept ] = useState('');
   const [ frmAmount, setFrmAmount ] = useState(0);
   const [ frmDate, setFrmDate ] = useState('');
@@ -27,7 +30,7 @@ function FrmUpdateMove(props) {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    let apiUrl = `http://localhost:3010/budget/${id}`;
+    let apiUrl = `${API_URL}/budget/${id}`;
 
     let newMove = {
       concept: frmConcept,
@@ -47,26 +50,26 @@ function FrmUpdateMove(props) {
 
   return <>
     <form className='frmUpdateMove' onSubmit={handleUpdate}>
-      <label className='lblFrmNewMove'>Concepto:</label>
-      <input className='inputFrmNewMove' type='text'
+      <label className='lblFrmUpdate'>Concepto:</label>
+      <input className='inputFrmUpdate' type='text'
           defaultValue ={concept}
           onChange={(e) => setFrmConcept(e.target.value)}
       />
       <br />
-      <label className='lblFrmNewMove'>Monto de movimiento</label>
-      <input className='inputFrmNewMove' type='number' step=".01"
+      <label className='lblFrmUpdate'>Monto de movimiento</label>
+      <input className='inputFrmUpdate' type='number' step=".01"
           defaultValue={parseFloat(amount)}
           onChange={(e) => setFrmAmount(e.target.value)}
       />
       <br />
-      <label className='lblFrmNewMove'>Fecha</label>
-      <input className='inputFrmNewMove' type='date'
+      <label className='lblFrmUpdate'>Fecha</label>
+      <input className='inputFrmUpdate' type='date'
           defaultValue={frmDateDef} 
           onChange={(e) => setFrmDate(e.target.value)}
       />
       <br />
-      <label className='lblFrmNewMove'>Tipo de movimiento</label>
-      <select className='inputFrmNewMove' name="select" 
+      <label className='lblFrmUpdate'>Tipo de movimiento</label>
+      <select className='inputFrmUpdate' name="select" 
           onChange={(e) => setFrmType(e.target.value)}>
         <option value="-">-</option>
         {whatType === 1 ? (<option value="Ingreso" selected>Ingreso</option>) :
@@ -77,7 +80,9 @@ function FrmUpdateMove(props) {
       <br />
       <input className='btnSubmitUpdateMove' type='submit' value='Enviar' />
     </form>
-    <Link className='linkFrmNewMove' to='/budget'>Volver a la pantalla principal</Link>
+    <Link className='linkFrmUpdate' to='/budget'>
+      Volver a la pantalla principal
+    </Link>
   </>
 }
 

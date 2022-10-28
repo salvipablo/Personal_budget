@@ -10,7 +10,8 @@ function UpdateMove() {
   const { id, concept, amount, date, type } = state.movement[0];
   
   return (
-    <section className='cntFrmNewMove'>
+    <section className='cntFrmUpdate'>
+      <h2 className='titleFrmUpdate'>Actualizar movimiento.</h2>
       <FrmUpdateMove 
         id={id}
         concept={concept}

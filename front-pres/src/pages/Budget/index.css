@@ -1,15 +1,38 @@
+/* Screen size less than 1280 */
+
 .cntContents {
   display: flex;
 }
 
 .cntMainAside {
+  padding: 1em 5px 0 5px;
+  margin-bottom: 60px;
+
   display: flex;
-  padding: 1em 10px 0 10px;
+  flex-direction: column-reverse;
 }
 
 .cntMain {
-  width: 80%;
+  width: 100%;
 }
+
 .cntAside {
-  width: 20%;
+  width: 100%;
+}
+
+/* Screen size less than 1280 */
+
+@media (min-width: 1280px) {
+  .cntMainAside {
+    padding: 1em 10px 0 10px;
+    flex-direction: row;
+  }
+
+  .cntMain {
+    width: 80%;
+  }
+
+  .cntAside {
+    width: 20%;
+  }
 }

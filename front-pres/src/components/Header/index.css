@@ -1,34 +1,41 @@
+/* Screen size less than 1280 */
+
 .headerBudget {
   padding: 0 10px;
 }
+
 .cntHeaderLeft {
   display: flex;
   align-items: flex-end;
+  width: 65%;
 }
 
 .imgHeaderBudget {
   width: 80px;
-  margin-right: 2em;
+  margin-right: 0.5em;
 }
 
 .titleHeader {
   font-family: 'Roboto';
+  font-size: 14px;
 }
 
 .cntHeaderRight {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 35%;
 }
 
 .btnSession {
-  width: 200px;
+  width: 100%;
   height: 40px;
   
   background-color: #353586;
   color: #ffe4c4;
   
   border: 1px solid #333333;
-  border-radius: 15px;
+  border-radius: 8px;
   
   font-size: 16px;
   font-weight: bold;
@@ -37,11 +44,35 @@
   text-transform: uppercase;
   
   cursor: pointer;
-
-  margin-right: 2em;
 }
 
 .cntHeaderContent {
   display: flex;
   justify-content: space-between;
+}
+
+/* Screen size less than 1280 */
+
+@media (min-width: 1280px) {
+  .imgHeaderBudget {
+    width: 120px;
+    margin-right: 0.5em;
+  }
+
+  .titleHeader {
+    font-size: 32px;
+  }
+
+  .cntHeaderLeft {
+    width: 80%;
+  }
+
+  .cntHeaderRight {
+    width: 20%;
+  }
+
+  .btnSession {
+    width: 50%;
+    height: 60px
+  }
 }

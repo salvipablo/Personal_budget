@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './index.css';
 
+import { UserContext } from '../../context/UserContext.js';
+
 function FrmRegister() {
+  const { API_URL } = useContext(UserContext);
   const [ user, setUser ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  const apiUrl = 'http://localhost:3010/users';
+  const apiUrl = `${API_URL}/users`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

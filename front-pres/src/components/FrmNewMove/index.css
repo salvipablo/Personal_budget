@@ -1,26 +1,27 @@
+/* Screen size less than 1280 */
+
 .frmNewMove {
   display: inline-block;
-  width: 600px;
+  width: 100%;
   padding: 2em;
-  border: 1px solid #325549;
   border-radius: 50px;
   margin-top: 1em;
+  max-width: 500px;
 }
 
 .lblFrmNewMove {
-  display: inline-block;
-  width: 250px;
-  height: 50px;
+  display: block;
 }
 
 .inputFrmNewMove {
   display: inline-block;
-  width: 270px;
+  width: 100%;
   padding: 1em;
+  margin-bottom: 1.8em;
 }
 
 .btnSubmitNewMove {
-  width: 98%;
+  width: 100%;
   height: 50px;
 }
 
@@ -32,3 +33,5 @@
   font-size: 11px;
   font-weight: bold;
 }
+
+/* Screen size less than 1280 */

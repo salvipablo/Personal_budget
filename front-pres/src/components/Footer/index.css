@@ -1,3 +1,5 @@
+/* Screen size less than 1280 */
+
 .footerBudget {
   color: #f0f8ff;
   width: 100%;
@@ -11,12 +13,21 @@
   background-color: #333333;
   height: 100%;
   text-align: center;
-  padding-top: 10px;
-  font-size: 24px;
+  padding-top: 15px;
+  font-size: 18px;
   text-transform: uppercase;
   color: #a6a6e2;
 }
 
 .imgFooter {
   height: 50%;
+}
+
+/* Screen size less than 1280 */
+
+@media (min-width: 400px) {
+  .textFooter {
+    padding-top: 10px;
+    font-size: 24px;
+  }
 }

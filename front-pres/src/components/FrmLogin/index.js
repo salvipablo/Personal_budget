@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -9,7 +9,7 @@ function FrmLogin() {
   const [ emailUser, setEmailUser ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  const { setUserName, setLoggedUserId } = useContext(UserContext);
+  const { setUserName, setLoggedUserId, API_URL } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -28,12 +28,14 @@ function FrmLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    let apiUrl = `${API_URL}/login`
+
     let userSearch = {
       email: emailUser,
       password: password
     }
 
-    const response = await fetch('http://localhost:3010/login', {
+    const response = await fetch(apiUrl, {
       method: "POST",
       body: JSON.stringify(userSearch),
       headers: {"Content-type": "application/json"}
@@ -44,7 +46,7 @@ function FrmLogin() {
     else grantAccess(information.user);
   };
 
-  return (
+  return <>
     <form className='formLogin' onSubmit={handleSubmit}>
       <input className='inputLogin' type="email" name="email" 
               placeholder="Email...." 
@@ -54,7 +56,8 @@ function FrmLogin() {
               onChange={(e) => setPassword(e.target.value)} />
       <button className='btnFrmLogin'>Ingresar</button>
     </form>
-  );
+    <Link className='linkLogin' to='/'>Volver a la pantalla principal</Link>
+  </>;
 }
 
 export default FrmLogin;

@@ -4,8 +4,8 @@ import { UserContext } from '../../context/UserContext.js';
 
 function CardCurrentBalance() {
   const [ currentBalance, setCurrentBalance ] = useState(0);
-  const { loggedUserId, updateComponents } = useContext(UserContext);
-  const apiUrl = `http://localhost:3010/currentBalance/${loggedUserId}`;
+  const { loggedUserId, updateComponents, API_URL } = useContext(UserContext);
+  const apiUrl = `${API_URL}/currentBalance/${loggedUserId}`;
 
   const updateCardBalance = async () => {
     const response = await fetch(apiUrl);

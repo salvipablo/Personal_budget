@@ -1,12 +1,17 @@
+/* Screen size less than 1280 */
+
 .cntFrmNewMove {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .titleFrmNewMove {
   text-align: center;
   margin-top: 1em;
   text-transform: uppercase;
   font-family: 'Roboto';
 }
+
+/* Screen size less than 1280 */

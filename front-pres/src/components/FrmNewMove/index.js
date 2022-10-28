@@ -6,7 +6,7 @@ import './index.css';
 import { UserContext } from '../../context/UserContext.js';
 
 function FrmNewMove() {
-  const { loggedUserId } = useContext(UserContext);
+  const { loggedUserId, API_URL } = useContext(UserContext);
   const [ concept, setConcept ] = useState('');
   const [ amount, setAmount ] = useState(0);
   const [ date, setDate ] = useState('');
@@ -17,6 +17,7 @@ function FrmNewMove() {
     
     if ( type === '' || type === '-' ) alert('No a seleccionado tipo')
     else {
+      let apiUrl = `${API_URL}/budget`;
       let newMove = {
         concept: concept,
         amount: parseFloat(amount),
@@ -25,7 +26,7 @@ function FrmNewMove() {
         iduser: loggedUserId
       }
 
-      const response = await fetch('http://localhost:3010/budget/', {
+      const response = await fetch(apiUrl, {
         method: "POST",
         body: JSON.stringify(newMove),
         headers: {"Content-type": "application/json"}
@@ -63,7 +64,9 @@ function FrmNewMove() {
       <br />
       <input className='btnSubmitNewMove' type='submit' value='Enviar'></input>
     </form>
-    <Link className='linkFrmNewMove' to='/budget'>Volver a la pantalla principal</Link>
+    <Link className='linkFrmNewMove' to='/budget'>
+      Volver a la pantalla principal
+    </Link>
   </>
 }
 

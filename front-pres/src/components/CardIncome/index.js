@@ -4,8 +4,8 @@ import { UserContext } from '../../context/UserContext.js';
 
 function CardIncome() {
   const [ incomes, setIncomes ] = useState(0);
-  const { loggedUserId, updateComponents } = useContext(UserContext);
-  const apiUrl = `http://localhost:3010/income/${loggedUserId}`;
+  const { loggedUserId, updateComponents, API_URL } = useContext(UserContext);
+  const apiUrl = `${API_URL}/income/${loggedUserId}`;
 
   const updateCardIncomes = async () => {
     const response = await fetch(apiUrl);
@@ -20,7 +20,7 @@ function CardIncome() {
 
   return (
     <div className='card'>
-      <p>Total Ingresado:</p>
+      <p>TOTAL INGRESADO:</p>
       <p className='cardNumber'>${incomes}</p>
     </div>
   );

@@ -10,9 +10,7 @@ import { UserContext } from '../../context/UserContext.js';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
-  const { loggedUserId, setUpdateComponents } = useContext(UserContext);
-
-  const apiUrl = `http://localhost:3010/budget/${loggedUserId}/movements`;
+  const { loggedUserId, setUpdateComponents, API_URL } = useContext(UserContext);
 
   useEffect(() => {
     updateMovements();
@@ -20,14 +18,20 @@ function Movements() {
   }, []);
 
   const updateMovements = async () => {
+    let apiUrl = `${API_URL}/budget/${loggedUserId}/movements`;
+
     const response = await fetch(apiUrl)
     const data = await response.json();
+
     setMovements(data);
   }
 
   const handleDelete = async (e) => {
     let id = e.target.alt;
-    await fetch(`http://localhost:3010/budget/${id}`, {method: "DELETE"})
+    let apiUrl = `${API_URL}/budget/${id}`
+
+    await fetch(apiUrl, {method: "DELETE"})
+
     updateMovements();
     setUpdateComponents(1);
   };
@@ -35,36 +39,38 @@ function Movements() {
   return <>
     <section>
       <div className='cntTableMov'>
-        <p className='titleMov'>Fecha</p>
-        <p className='titleMov'>Descripcion</p>
-        <p className='titleMov'>Monto</p>
-        <p className='titleMov'>Tipo Movimiento</p>
-        <p className='titleMov'>Categoria</p>
-        <p className='titleMov'>Eliminar</p>
-        <p className='titleMov'>Actualizar</p>
+        <p className='titleMov thDate'>Fecha</p>
+        <p className='titleMov thConcept'>Descripcion</p>
+        <p className='titleMov thAmount'>Monto</p>
+        <p className='titleMov thType'>Tipo Movimiento</p>
+        <p className='titleMov thDelete'>X</p>
+        <p className='titleMov thUpdate'>U</p>
       </div>
       
       {
         movements.map( ({ id, date, concept, amount, type }) =>
           <>
             <div className='cntMovMov'>
-              <p className='rowMov'>{date.substring(0, 10)}</p>
-              <p className='rowMov'>{concept}</p>
-              <p className='rowMov'>{amount}</p>
-              <p className='rowMov'>{type}</p>
-              <p className='rowMov'>-</p>
-              <button className='rowMov btnDelete' 
-                                          onClick={(e) => handleDelete(e)}>
-                <img alt={id} className='imgDelete' src={imgDelete} />
-              </button>
-              <Link 
-                  to='/updateMove'
-                  className='cntLinkUpdate'
-                  state={
-                    { movement: movements.filter((item) => item.id === id) }
-                  }>
-                <img alt={id} className='imgUpdate' src={imgUpdate} />
-              </Link>
+              <p className='rowMov tdDate'>{date.substring(0, 10)}</p>
+              <p className='rowMov tdConcept'>{concept}</p>
+              <p className='rowMov tdAmount'>{amount}</p>
+              <p className='rowMov tdType'>{type}</p>
+              <p className='rowMov tdDelete'>
+                <button className='btnDelete' 
+                                            onClick={(e) => handleDelete(e)}>
+                  <img alt={id} className='imgDelete' src={imgDelete} />
+                </button>
+              </p>
+              <p className='rowMov'>
+                <Link 
+                    to='/updateMove'
+                    className='cntLinkUpdate'
+                    state={
+                      { movement: movements.filter((item) => item.id === id) }
+                    }>
+                  <img alt={id} className='imgUpdate' src={imgUpdate} />
+                </Link>
+              </p>
             </div>
             <hr />
           </>
@@ -74,4 +80,4 @@ function Movements() {
   </>
 }
 
-export default Movements
+export default Movements;

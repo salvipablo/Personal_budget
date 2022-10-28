@@ -7,6 +7,9 @@ export function UserContextProvider(props) {
   const [ loggedUserId, setLoggedUserId] = useState(0);
   const [ updateComponents, setUpdateComponents] = useState(0);
 
+  const PORT_API = 3010;
+  const API_URL = `http://192.168.0.112:${PORT_API}`;
+
   useEffect(() => {
     let userSession = sessionStorage.getItem('userPres');
     setUserName(userSession);
@@ -14,7 +17,7 @@ export function UserContextProvider(props) {
 
   return (
     <UserContext.Provider value={
-      { userName, setUserName,
+      { API_URL, userName, setUserName,
         loggedUserId, setLoggedUserId,
         updateComponents, setUpdateComponents
       }
