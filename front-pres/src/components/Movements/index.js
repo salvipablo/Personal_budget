@@ -10,12 +10,12 @@ import { UserContext } from '../../context/UserContext.js';
 
 function Movements() {
   const [ movements, setMovements ] = useState([]);
-  const { loggedUserId, setUpdateComponents, API_URL } = useContext(UserContext);
+  const { loggedUserId, setUpdateComponents, API_URL, updateComponents } = useContext(UserContext);
 
   useEffect(() => {
     updateMovements();
     // eslint-disable-next-line
-  }, []);
+  }, [updateComponents]);
 
   const updateMovements = async () => {
     let apiUrl = `${API_URL}/budget/${loggedUserId}/movements`;
@@ -23,6 +23,7 @@ function Movements() {
     const response = await fetch(apiUrl)
     const data = await response.json();
 
+    setUpdateComponents(0);
     setMovements(data);
   }
 
@@ -32,8 +33,8 @@ function Movements() {
 
     await fetch(apiUrl, {method: "DELETE"})
 
-    updateMovements();
     setUpdateComponents(1);
+    updateMovements();
   };
 
   return <>

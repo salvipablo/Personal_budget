@@ -14,11 +14,9 @@
   row-gap: 20px;
 }
 
-.btnAside {
+.linkAside {
   width: 90%;
   height: 80px;
-
-  background: transparent;
 
   background-color: #353586;
   color: #ffe4c4;
@@ -26,22 +24,15 @@
   border: 1px solid #333333;
   border-radius: 15px;
 
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Roboto';
-
-  text-transform: uppercase;
-
-  cursor: pointer;
-}
-
-.linkAside {
-  color: aliceblue;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   font-family: 'Roboto';
   text-transform: uppercase;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Screen size less than 1280 */
